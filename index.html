@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visual Studio Code</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0px;
+      color: #333;
+      background-color: #fffefe;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: #ffffff;
+      color: rgb(15, 14, 14);
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bolder;
+    }
+
+    .logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+}
+
+.logo-text {
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #0e0e0f;
+}
+
+
+
+    nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    nav a {
+      color: rgb(19, 19, 19);
+      font-size: 16px;
+      font-weight: bold;
+      align-items: center;
+      justify-content: center;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 0px;
+      background-color: #ffffff;
+      color: rgb(13, 13, 13);
+      font-weight: bolder;
+    }
+
+    .hero h1 {
+      font-size: 50px;
+      margin-bottom: 10px;
+      font-weight: bolder;
+    }
+
+    .hero p {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    .hero button {
+      padding: 5px;
+      font-size: 25px;
+      color: white;
+      background-color: #005a9e;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .hero button:hover {
+      background-color: #004580;
+    }
+    .copilot-banner {
+  background-color: #ffffff;
+  color: #005a99;
+  font-size: 14px;
+ text-align: center;
+
+  
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.copilot-banner .copilot-link {
+  color: #0a69c7e7;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+}
+
+.copilot-banner .copilot-link:hover {
+  text-decoration: underline;
+}
+
+.content h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0 0 20px;
+}
+
+.cta-buttons {
+  margin: 20px 0;
+}
+
+.cta-btn {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cta-btn.blue {
+  background-color: #007acc;
+  color: #fff;
+}
+
+.cta-btn.gray {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.cta-btn.blue:hover {
+  background-color: #005a99;
+}
+
+.cta-btn.gray:hover {
+  background-color: #ddd;
+}
+.subtext {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  justify-content: center;
+}
+
+.subtext a {
+  color: #007acc;
+  text-decoration: none;
+  text-align: center;
+  justify-content: center;
+}
+
+.subtext a:hover {
+  text-decoration: underline;
+  text-align: center;
+  justify-content: center;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.content {
+  max-width: 50%;
+}
+
+.content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.content p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.content .link {
+  display: inline-block;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.content .link:hover {
+  text-decoration: underline;
+}
+
+.image-container {
+  max-width: 45%;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Features Section */
+#features {
+    padding: 2rem;
+    background: #fff;
+}
+
+#features h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.feature-container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.feature {
+    background: #f9f9f9;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feature img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 1rem;
+}
+
+.activation-banner {
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    height: 250px;
+    background: linear-gradient(to right, #d4f1c4, #e6e7ff);
+    border-radius: 12px;
+    margin: 50px auto;
+    width: 90%;
+    max-width: 1200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+}
+
+.activation-content {
+    flex: 1; /* Left side */
+}
+
+.activation-title {
+    flex: 1; /* Right side */
+    text-align: right;
+}
+
+.activation-content h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.activation-content p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.activation-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #0078d7;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.activation-button:hover {
+    background-color: #005bb5;
+    transform: scale(1.05);
+}
+#acts{
+    font-size: 30px;
+    font-weight: 200;
+    color: black;
+}
+.editor-preview {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+}
+.editor-preview img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.activation-title h1 {
+    font-size: 28px;
+    color: #0078d7;
+    text-align: right;
+}
+.activation-banner {
+    height:100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #d8f3dc, #e0c3fc);
+    border-radius: 10px;
+    padding: 20px 30px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    color: #0078d7;
+}
+
+.activation-left {
+    flex: 1;
+    text-align: left;
+}
+
+.activation-left h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    color: #0078d7;
+}
+
+.activation-right {
+    flex: 1;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.activation-right p {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+}
+
+.activation-button {
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.activation-button:hover {
+    background-color: #333;
+    color: #fff;
+}
+.language-support {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.language-support h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.description {
+  font-size: 16px;
+  color: #666;
+  max-width: 800px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.language-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.language-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.language-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.language-name {
+  font-size: 14px;
+  color: #444;
+}
+
+/* Language-specific colors */
+.js { background-color: #f7df1e; color: #000; }
+.ts { background-color: #007acc; color: #fff; }
+.python { background-color: #3776ab; color: #fff; }
+.csharp { background-color: #189f20; color: #fff; }
+.cpp { background-color: #004283; color: #fff; }
+.html { background-color: #e44d26; color: #fff; }
+.java { background-color: #007396; color: #fff; }
+.json { background-color: #292929; color: #fff; }
+.php { background-color: #777bb4; color: #fff; }
+.markdown { background-color: #083fa1; color: #fff; }
+.powershell { background-color: #012456; color: #fff; }
+.yaml { background-color: #cb171e; color: #fff; }
+
+.rich-features {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.features-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.features-header h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.features-header p {
+  font-size: 16px;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.feature-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+  width: 40px;
+  height: 40px;
+  background: #f0f7ff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.feature-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.feature-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f5f5f5;
+  transition: background-color 0.2s ease;
+}
+
+.social-icon:hover {
+  background: #e0e0e0;
+}
+
+.social-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: #666;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.footer-links a {
+  color: #666;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #0098FF;
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+
+footer a {
+   color: #0078d7;
+}
+  </style>
+</head>
+<body>
+  
+  <header>
+    </a>
+        <nav>
+          <a href="#" class="logo">
+            <svg viewBox="0 0 24 24" fill="#0098ff">
+                <path d="M24 2.5v19L18 24 0 18.5v-.561l18 1.545V0zM1 13.111L4.385 10 1 6.889l1.418-.827L5.853 8.65 12 3l3 1.456v11.088L12 17l-6.147-5.65-3.435 2.588z"/>
+            </svg>
+            </a>
+            <a href="#" style="font-size: 30px; color: #0078d7; font-weight: bold ;">Visual Studio Code</a>
+            <a href="#">Download</a>
+            <a href="#">Docs</a>
+            <a href="#">Blog</a>
+            <a href="#">Extensions</a>
+            <a href="#">GitHub Calipote</a>
+            <a href="#">API</a>
+            <a href="#">FAQ</a>
+            <a href="#">updates</a>
+          </nav>
+          <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button class="cta-btn blue">Download</button>
+          </div>
+        </header>
+        <div class="copilot-banner">
+            🚀 <a href="#" class="copilot-link">Get GitHub Copilot Free in VS Code!</a>
+           
+          </div>
+      
+      
+        <section class="hero">
+          <h1>Your Code Editor.</h1>
+          <h1>Refined with AI</h1>
+          <div class="cta-buttons">
+          <button class="cta-btn blue">Download Now</button>
+          <button class="cta-btn gray">Get capilote free</button>
+          </div>
+         
+        </section>
+        <p class="subtext">
+            <a href="#">web</a>,
+            <a href="#">insiders edition</a>,
+            <a href="#">other platforms</a>
+          </p>
+
+          <div class="editor-preview">
+            <img src="Screenshot 2025-01-11 182740.png" alt="VS Code Editor Interface">
+        </div>
+       
+         
+            <div class="container">
+              <div class="content">
+                <h1>Create faster</h1>
+                <p>
+                  Describe what you want to build in natural language, and Copilot Edits takes
+                  care of the rest. Copilot Edits makes changes across files in your codebase
+                  with a UI designed for rapid iteration. It's the fastest way to add new
+                  functionality to your apps.
+                </p>
+                <a href="#" class="link">Build with Copilot Edits</a>
+                <p>
+                  Copilot Chat is an expert on your codebase, helping you to answer questions,
+                  explain code, and propose fixes. Chat is available wherever you need it -
+                  either as a dedicated sidebar panel or directly from within your code so you
+                  can stay in context.
+                </p>
+                <a href="#" class="link">Get answers from Copilot Chat</a>
+              </div>
+              <div class="image-container">
+                <img src="ss4.jpg" alt="Code editor UI" />
+              </div>
+            </div>
+            <section id="features">
+              <h2>Features</h2>
+              <div class="feature-container">
+                  <div class="feature">
+                      <h3>Choose the model that works for you</h3>
+                      <p>Pick the model that works best for your project and team, including GPT 4o and Claude Sonnet.</p>
+                      <img src="ss1.jpg" alt="Model Selection Dropdown">
+                  </div>
+                  <div class="feature">
+                      <h3>An expert on your codebase</h3>
+                      <p>Copilot locally indexes your codebase to understand what's relevant and supplements that context to interactions with Copilot.</p>
+                      <img src="ss3.jpg" alt="Codebase Context Example">
+                  </div>
+                  <div class="feature">
+                      <h3>Personalized to your needs</h3>
+                      <p>Copilot works the way you do. Customize Copilot's prompts with details about your team's workflows, tools, and projects.</p>
+                      <img src="ss2.jpg" alt="Personalized Prompts Example">
+                  </div>
+              </div>
+              <div class="activation-banner">
+                <div class="activation-left">
+                    <h2>Activate Copilot Free <br> in Visual Studio Code</h2>
+                </div>
+                <div class="activation-right">
+                    <p>No trial. No credit card required. Just your GitHub account.</p>
+                    <button class="activation-button">Get Copilot Free</button>
+                </div>
+            </div>
+            
+            
+            </div>
+          </section>
+          <section class="language-support">
+            <h2>Code in any language</h2>
+            <p class="description">VS Code supports almost every major programming language. Several ship in the box, like JavaScript, TypeScript, CSS, and HTML, but extensions for others can be found in the VS Code Marketplace.</p>
+            
+            <div class="language-grid">
+              <div class="language-item">
+                <span class="language-icon js">JS</span>
+                <span class="language-name">JavaScript</span>
+              </div>
+              <div class="language-item">
+                <span class="language-icon ts">TS</span>
+                <span class="language-name">TypeScript</span>
+              </div>
+              <div class="language-item">
+                <span class="language-icon python">Py</span>
+                <span class="language-name">Python</span>
+              </div>
+              <div class="language-item">
+                <span class="language-icon csharp">C#</span>
+                <span class="language-name">C#</span>
+              </div>
+              <div class="language-item">
+                <span class="language-icon cpp">C++</span>
+                <span class="language-name">C++</span>
+              </div>
+              <div class="language-item">
+                <span class="language-icon html">{ }</span>
+                <span class="language-name">HTML</span>
+              </div>
+              <div class="language-item">
+                <span class="language-icon java">J</span>
+                <span class="language-name">Java</span>
+              </div>
+              <div class="language-item">
+                <span class="language-icon json">{ }</span>
+                <span class="language-name">JSON</span>
+              </div>
+              <div class="language-item">
+                <span class="language-icon php">PHP</span>
+                <span class="language-name">PHP</span>
+              </div>
+              <div class="language-item">
+                <span class="language-icon markdown">MD</span>
+                <span class="language-name">Markdown</span>
+              </div>
+              <div class="language-item">
+                <span class="language-icon powershell">PS</span>
+                <span class="language-name">PowerShell</span>
+              </div>
+              <div class="language-item">
+                <span class="language-icon yaml">YM</span>
+                <span class="language-name">YAML</span>
+              </div>
+            </div>
+          </section>
+          <section class="rich-features">
+            <div class="features-header">
+              <h2>Code with rich features</h2>
+              <p>There's a lot more to an editor. Whether it's using built-in features or rich extensions, there's something for everyone.</p>
+            </div>
+          
+            <div class="features-grid">
+              <!-- Row 1 -->
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#0098FF" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </div>
+                <h3>Integrated terminal</h3>
+                <p>Use your favorite shell whether it's zsh, pwsh, or git bash, all inside the editor.</p>
+              </div>
+          
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#0098FF" stroke-width="2">
+                    <path d="M5 3l14 9-14 9V3z"/>
+                  </svg>
+                </div>
+                <h3>Run code</h3>
+                <p>Run and debug your code without leaving your editor.</p>
+              </div>
+          
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#0098FF" stroke-width="2">
+                    <path d="M12 5v14M5 12h14"/>
+                  </svg>
+                </div>
+                <h3>Version control</h3>
+                <p>Built-in support for git and many other source control providers.</p>
+              </div>
+          
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#0098FF" stroke-width="2">
+                    <path d="M14 6l-6 6 6 6"/>
+                  </svg>
+                </div>
+                <h3>Build tasks</h3>
+                <p>Run tools and analyze their results from within VS Code.</p>
+              </div>
+          
+              <!-- Row 2 -->
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#0098FF" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 6v6l4 2"/>
+                  </svg>
+                </div>
+                <h3>Local history</h3>
+                <p>Never lose your changes with automatically tracked local history.</p>
+              </div>
+          
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#0098FF" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                    <line x1="9" y1="9" x2="9.01" y2="9"/>
+                    <line x1="15" y1="9" x2="15.01" y2="9"/>
+                  </svg>
+                </div>
+                <h3>Themes</h3>
+                <p>Your theme is an extension of your personality. Add some flair to your editor and add your touch.</p>
+              </div>
+          
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#0098FF" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <path d="M7 8h10M7 12h10M7 16h10"/>
+                  </svg>
+                </div>
+                <h3>Accessibility</h3>
+                <p>Optimized experience for screen readers, high contrast themes, and keyboard-only navigation.</p>
+              </div>
+          
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#0098FF" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M2 12h20"/>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                  </svg>
+                </div>
+                <h3>Web support</h3>
+                <p>Whether you are on your phone, tablet, or desktop, you can access your code from anywhere.</p>
+              </div>
+            </div>
+          
+            <div class="social-links">
+              <a href="#" class="social-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                </svg>
+              </a>
+              <a href="#" class="social-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/>
+                </svg>
+              </a>
+              <a href="#" class="social-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                </svg>
+              </a>
+            </div>
+          
+            <div class="footer-links">
+              <a href="#">Support</a>
+              <a href="#">Privacy</a>
+              <a href="#">Terms of Use</a>
+              <a href="#">License</a>
+            </div>
+          </section>
+          
+  
+         
+  <footer>
+    <p>&copy; 2025 Microsoft. All rights reserved. <a href="#">Privacy</a> | <a href="#">Terms</a></p>
+  </footer>
+</body>
+</html>
